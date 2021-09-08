@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: hello-argocd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-argocd
+  template:
+    metadata:
+      labels:
+        app: hello-argocd
+    spec:
+      containers:
+        - name: web
+          image: allexki/portfolio
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+      restartPolicy: Always

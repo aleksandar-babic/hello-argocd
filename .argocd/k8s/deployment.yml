@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: hello-argocd
 spec:
-  replicas: 2
+  replicas: 17
   selector:
     matchLabels:
       app: hello-argocd
